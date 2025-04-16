@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6cfdd929-42a1-4e02-9318-8b1571a16d2a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENVIRONMENT.md" beforeDir="false" afterPath="$PROJECT_DIR$/ENVIRONMENT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codepush-infrastructure.bicep" beforeDir="false" afterPath="$PROJECT_DIR$/codepush-infrastructure.bicep" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/default-server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/script/default-server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/redis-manager.ts" beforeDir="false" afterPath="$PROJECT_DIR$/script/redis-manager.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/routes/passport-authentication.ts" beforeDir="false" afterPath="$PROJECT_DIR$/script/routes/passport-authentication.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/views/authenticate.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/script/views/authenticate.ejs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2vn6fcwdFD4Ubzwpn8muX2V5TTW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6cfdd929-42a1-4e02-9318-8b1571a16d2a" name="Changes" comment="" />
+      <created>1744768595038</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744768595038</updated>
+      <workItem from="1744768596642" duration="246000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

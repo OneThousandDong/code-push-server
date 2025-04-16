@@ -48,7 +48,7 @@ export class PassportAuthentication {
   private _storageInstance: storage.Storage;
 
   constructor(config: AuthenticationConfig) {
-    this._serverUrl = process.env["SERVER_URL"];
+    this._serverUrl = process.env["CODE_PUSH_SERVER_URL"];
 
     // This session is neither encrypted nor signed beyond what is provided by SSL
     // By default, the 'secure' flag will be set if the node process is using SSL
@@ -167,17 +167,29 @@ export class PassportAuthentication {
 
     router.get("/auth/login", this._cookieSessionMiddleware, (req: Request, res: Response): any => {
       req.session["hostname"] = req.query.hostname;
-      res.render("authenticate", { action: "login", isGitHubAuthenticationEnabled, isMicrosoftAuthenticationEnabled });
+      var baseUrl: string = `${process.env['BASE_URL']}/`
+      if (baseUrl === '//') {
+        baseUrl = '/'
+      }
+      res.render("authenticate", { base_url: baseUrl, action: "login", isGitHubAuthenticationEnabled, isMicrosoftAuthenticationEnabled });
     });
 
     router.get("/auth/link", this._cookieSessionMiddleware, (req: Request, res: Response): any => {
       req.session["authorization"] = req.query.access_token;
-      res.render("authenticate", { action: "link", isGitHubAuthenticationEnabled, isMicrosoftAuthenticationEnabled });
+      var baseUrl: string = `${process.env['BASE_URL']}/`
+      if (baseUrl === '//') {
+        baseUrl = '/'
+      }
+      res.render("authenticate", { base_url: baseUrl, action: "link", isGitHubAuthenticationEnabled, isMicrosoftAuthenticationEnabled });
     });
 
     router.get("/auth/register", this._cookieSessionMiddleware, (req: Request, res: Response): any => {
       req.session["hostname"] = req.query.hostname;
-      res.render("authenticate", { action: "register", isGitHubAuthenticationEnabled, isMicrosoftAuthenticationEnabled });
+      var baseUrl: string = `${process.env['BASE_URL']}/`
+      if (baseUrl === '//') {
+        baseUrl = '/'
+      }
+      res.render("authenticate", { base_url: baseUrl, action: "register", isGitHubAuthenticationEnabled, isMicrosoftAuthenticationEnabled });
     });
 
     return router;
@@ -317,6 +329,12 @@ export class PassportAuthentication {
           return;
         }
 
+        const allowedEmailDomains: string[] = process.env["ALLOWED_EMAIL_DOMAINS"] ? process.env["ALLOWED_EMAIL_DOMAINS"].split(",") : [];
+        if (allowedEmailDomains.length > 0 && !allowedEmailDomains.some((domain: string) => emailAddress.endsWith(domain))) {
+          restErrorUtils.sendForbiddenPage(res, "You are not registered with the service using this provider account.");
+          return;
+        }
+
         const issueAccessKey = (accountId: string): Promise<void> => {
           const now: number = new Date().getTime();
           const friendlyName: string = `Login-${now}`;
@@ -335,7 +353,11 @@ export class PassportAuthentication {
             req.session["accessKey"] = key;
             req.session["isNewAccount"] = action === "register";
 
-            res.redirect("/accesskey");
+            var baseUrl: string = `${process.env['BASE_URL']}/`
+            if (baseUrl === '//') {
+              baseUrl = '/'
+            }
+            res.redirect(`${baseUrl}accesskey`);
           });
         };
 
